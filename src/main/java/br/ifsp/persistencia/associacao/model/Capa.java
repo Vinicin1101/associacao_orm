@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Capa {
 
@@ -17,6 +19,7 @@ public class Capa {
 
     // Referenciando a classe Livro
     @OneToOne(mappedBy = "capa")
+    @JsonBackReference
     private Livro livro;
 
     public Capa() {
